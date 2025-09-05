@@ -1,0 +1,176 @@
+// data.ts (Hardcoded static data based on screenshots)
+export const days = ['TUE', 'WED', 'THU', 'FRI', 'MON', 'SUN'];
+export const dayNumbers = ['23', '24', '25', '26', '22', '28'];
+
+export const groups = [
+  {
+    name: 'Bar Staff',
+    count: 2,
+    employees: [
+      {
+        avatar: 'CS',
+        name: 'Carol Saragosa',
+        role: 'Waitress - 16h',
+        weeklyPay: 800,
+        shifts: [
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 },{ status: 'approved_leave_all_day' } ],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ status: 'approved_leave_all_day' }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+        ],
+      },
+      {
+        avatar: 'JS',
+        name: 'John Smith',
+        role: 'Waitress - 16h',
+        weeklyPay: 800,
+        shifts: [
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ status: 'approved_leave_all_day' }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80, status: 'absent' }],
+          [{ status: 'approved_leave' }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+        ],
+      },
+    ],
+  },
+  {
+    name: 'Janitors',
+    count: 2,
+    employees: [
+      {
+        avatar: 'CS',
+        name: 'Carol Saragosa',
+        role: 'Waitress - 16h',
+        weeklyPay: 800,
+        shifts: [
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80, status: 'approved_leave' }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80, status: 'approved_leave' }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+        ],
+      },
+      {
+        avatar: 'JS',
+        name: 'John Smith',
+        role: 'Waitress - 16h',
+        weeklyPay: 800,
+        shifts: [
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80, status: 'absent' }],
+          [{ status: 'approved_leave_all_day' }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+        ],
+      },
+    ],
+  },
+  {
+    name: 'Waiters/Waitresses',
+    count: 6,
+    employees: [
+      // Repeating sample employees for the 6 count, as per screenshot duplicates
+      {
+        avatar: 'CS',
+        name: 'Carol Saragosa',
+        role: 'Waitress - 16h',
+        weeklyPay: 800,
+        shifts: [
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }, { start: '18:30', end: '23:30', duration: 3.5, pay: 80 }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ status: 'approved_leave_all_day' }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+        ],
+      },
+      {
+        avatar: 'JS',
+        name: 'John Smith',
+        role: 'Waitress - 16h',
+        weeklyPay: 800,
+        shifts: [
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80, status: 'absent' }],
+          [{ status: 'approved_leave_all_day' }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ status: 'approved_leave_all_day' }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ status: 'approved_leave' }],
+        ],
+      },
+      // Add more duplicates or variations to reach 6, but for brevity, repeating 3 times
+      {
+        avatar: 'CS',
+        name: 'Carol Saragosa',
+        role: 'Waitress - 16h',
+        weeklyPay: 800,
+        shifts: [
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ status: 'approved_leave_all_day' }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+        ],
+      },
+      {
+        avatar: 'JS',
+        name: 'John Smith',
+        role: 'Waitress - 16h',
+        weeklyPay: 800,
+        shifts: [
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ status: 'approved_leave_all_day' }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80, status: 'absent' }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80, status: 'absent' }],
+          [{ status: 'approved_leave' }],
+        ],
+      },
+      {
+        avatar: 'CS',
+        name: 'Carol Saragosa',
+        role: 'Waitress - 16h',
+        weeklyPay: 800,
+        shifts: [
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ status: 'approved_leave_all_day' }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+        ],
+      },
+      {
+        avatar: 'JS',
+        name: 'John Smith',
+        role: 'Waitress - 16h',
+        weeklyPay: 800,
+        shifts: [
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80, status: 'absent' }],
+          [{ status: 'approved_leave_all_day' }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+          [{ start: '08:00', end: '12:00', duration: 3.5, pay: 80 }],
+        ],
+      },
+    ],
+  },
+];
