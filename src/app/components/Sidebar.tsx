@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
-import { 
-  LayoutDashboard, 
-  Calendar, 
-  Users, 
-  BarChart3, 
-  Grid3X3, 
-  Settings, 
+import React, { useEffect, useState } from 'react';
+import {
+  LayoutDashboard,
+  Calendar,
+  Users,
+  BarChart3,
+  Grid3X3,
+  Settings,
   ChevronLeft,
   Minimize2
 } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 const Sidebar: React.FC = () => {
   const navItems = [
@@ -20,15 +21,40 @@ const Sidebar: React.FC = () => {
 
   ];
 
-  const [isMinimized, setIsMinimized] = useState(true)
+  const [isMinimized, setIsMinimized] = useState(false)
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+
+// Load saved theme or system preference
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else {
+      // If no preference saved, respect system setting
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      setTheme(prefersDark ? "dark" : "light");
+    }
+  }, []);
+
+  // Apply theme to <html> + save to localStorage
+  useEffect(() => {
+  console.log("Theme changed:", theme);
+  console.log("HTML classes:", document.documentElement.className);
+  if (theme === "dark") {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
+  localStorage.setItem("theme", theme);
+}, [theme]);
 
   return (
-    <div className="w-fit h-screen bg-slate-800 text-gray-300 flex flex-col transition-all duration-300">
+    <div className="w-fit h-screen bg-slate-800 dark:bg-white text-gray-300 flex flex-col">
       {/* Header with minimize button */}
       <div className="p-4 border-b border-slate-700">
         <div className="flex items-center justify-between">
           {!isMinimized && <span className="text-gray-400 text-sm font-medium">Minimize</span>}
-          <ChevronLeft className="w-4 h-4 text-gray-400" onClick={()=>setIsMinimized(!isMinimized)} />
+          <ChevronLeft className="w-4 h-4 text-gray-400" onClick={() => setIsMinimized(!isMinimized)} />
         </div>
       </div>
 
@@ -39,11 +65,10 @@ const Sidebar: React.FC = () => {
           return (
             <div
               key={`${item.name}-${index}`}
-              className={`flex items-center space-x-3 px-3 py-3 rounded-lg cursor-pointer transition-all duration-200 ${
-                item.active 
-                  ? 'bg-slate-700 text-white shadow-lg' 
+              className={`flex items-center space-x-3 px-3 py-3 rounded-lg cursor-pointer transition-all duration-200 ${item.active
+                  ? 'bg-slate-700 text-white shadow-lg'
                   : 'text-gray-400 hover:bg-slate-700/50 hover:text-gray-300'
-              }`}
+                }`}
             >
               <IconComponent className="w-5 h-5" />
               {!isMinimized && <span className="font-medium">{item.name}</span>}
@@ -58,6 +83,9 @@ const Sidebar: React.FC = () => {
           <Settings className="w-5 h-5" />
           {!isMinimized && <span className="font-medium">Settings</span>}
         </div>
+        {/* <div className="flex items-center space-x-3 px-3 py-3 rounded-lg cursor-pointer text-gray-400 hover:bg-slate-700/50 hover:text-gray-300 transition-all duration-200">
+          <ThemeToggle theme={theme} setTheme={setTheme} isMinimized={isMinimized} />
+        </div> */}
       </div>
 
       {/* Footer with company name and logo */}
@@ -69,7 +97,7 @@ const Sidebar: React.FC = () => {
           {!isMinimized && (
             <span className="font-semibold text-white">Entie LD</span>
           )}
-          
+
           {/* Tooltip for minimized state */}
           {isMinimized && (
             <div className="absolute left-full ml-2 px-2 py-1 bg-slate-900 text-white text-sm rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50">

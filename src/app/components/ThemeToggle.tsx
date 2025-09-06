@@ -1,18 +1,18 @@
-// components/ThemeToggle.tsx
 import React from 'react';
 
 interface ThemeToggleProps {
   theme: 'light' | 'dark';
   setTheme: (theme: 'light' | 'dark') => void;
+  isMinimized: boolean
 }
 
-const ThemeToggle: React.FC<ThemeToggleProps> = ({ theme, setTheme }) => {
+const ThemeToggle: React.FC<ThemeToggleProps> = ({ theme, setTheme, isMinimized=false }) => {
   return (
     <button
-      className="fixed top-4 right-4 px-4 py-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600"
+      className=" rounded transition"
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
     >
-      {theme === 'light' ? 'Switch to Dark' : 'Switch to Light'}
+      {theme === 'light' ? (isMinimized ? '🌙' : '🌙 Dark Mode') : isMinimized ? '☀️': '☀️ Light Mode'}
     </button>
   );
 };
