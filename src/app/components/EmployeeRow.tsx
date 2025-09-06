@@ -20,15 +20,15 @@ interface Employee {
 
 const EmployeeRow: React.FC<{ employee: Employee }> = ({ employee }) => {
     return (
-        <div className="flex border-b rounded-xl border-gray-200 bg-[#FAF8FC] dark:border-gray-700">
+        <div className="flex border-b rounded-xl border-gray-200 bg-[#FAF8FC]">
             <div className='p-1'>
-                <div className="w-64 h-full flex-shrink-0 rounded-xl flex p-4 space-x-4 bg-white dark:bg-gray-900">
+                <div className="w-64 h-full flex-shrink-0 rounded-xl flex p-4 space-x-4 bg-white">
                     <div className="w-10 h-10 rounded-full bg-blue-200 flex items-center justify-center text-blue-800">
                         {employee.avatar || employee.name.charAt(0)}
                     </div>
                     <div>
                         <p className="font-semibold">{employee.name}</p>
-                        <p className="text-sm text-gray-500 dark:text-gray-400">{employee.role}</p>
+                        <p className="text-sm text-gray-500">{employee.role}</p>
                         <p className="text-sm">${employee.weeklyPay}</p>
                     </div>
                 </div>

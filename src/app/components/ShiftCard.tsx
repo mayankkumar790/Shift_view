@@ -10,20 +10,20 @@ interface Shift {
 }
 
 const ShiftCard: React.FC<{ shift: Shift }> = ({ shift }) => {
-    let color = 'bg-cyan-100 text-cyan-800 dark:bg-cyan-900 dark:text-cyan-200';
+    let color = 'bg-cyan-100 text-cyan-800';
     let content = null;
 
     if (shift.status === 'absent') {
-        color = 'font-semibold bg-red-400 text-white dark:bg-red-900 dark:text-red-200';
+        color = 'font-semibold bg-red-400 text-white';
         content = <div className='flex flex-col gap-1'>
             <p className='font-semibold text-white'>{shift.start}-{shift.end}</p>
             <p className="font-thin">Absent</p>
         </div>;
     } else if (shift.status === 'approved_leave_all_day') {
-        color = 'font-semibold bg-amber-100 text-gray-500 dark:bg-amber-900 dark:text-amber-200';
+        color = 'font-semibold bg-amber-100 text-gray-500';
         content = <p>Approved Leave ○ All Day</p>;
     } else if (shift.status === 'approved_leave') {
-        color = 'font-semibold bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200';
+        color = 'font-semibold bg-yellow-100 text-yellow-800';
         content = <p>Approved Leave</p>;
     } else {
         content = (

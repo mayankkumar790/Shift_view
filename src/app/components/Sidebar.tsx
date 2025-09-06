@@ -22,34 +22,9 @@ const Sidebar: React.FC = () => {
   ];
 
   const [isMinimized, setIsMinimized] = useState(false)
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
-
-// Load saved theme or system preference
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
-    if (savedTheme) {
-      setTheme(savedTheme);
-    } else {
-      // If no preference saved, respect system setting
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      setTheme(prefersDark ? "dark" : "light");
-    }
-  }, []);
-
-  // Apply theme to <html> + save to localStorage
-  useEffect(() => {
-  console.log("Theme changed:", theme);
-  console.log("HTML classes:", document.documentElement.className);
-  if (theme === "dark") {
-    document.documentElement.classList.add("dark");
-  } else {
-    document.documentElement.classList.remove("dark");
-  }
-  localStorage.setItem("theme", theme);
-}, [theme]);
 
   return (
-    <div className="w-fit h-screen bg-slate-800 dark:bg-white text-gray-300 flex flex-col">
+    <div className="w-fit h-screen bg-slate-800 text-gray-300 flex flex-col">
       {/* Header with minimize button */}
       <div className="p-4 border-b border-slate-700">
         <div className="flex items-center justify-between">
