@@ -1,7 +1,7 @@
 // components/ShiftTable.tsx
 import React from 'react';
 import EmployeeRow from './EmployeeRow';
-import { groups } from '../data'; // Import from data file
+import { groups } from '../../data'; // Import from data file
 import { Settings } from 'lucide-react';
 
 const ShiftTable: React.FC = () => {

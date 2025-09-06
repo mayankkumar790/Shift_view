@@ -2,11 +2,11 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Sidebar from '../components/Sidebar';
-import TopFilterBar from '../components/TopFilterBar';
-import ShiftTable from '../components/ShiftTable';
-import FAB from '../components/FAB';
-import ThemeToggle from '../components/ThemeToggle';
+import Sidebar from './components/Sidebar';
+import TopFilterBar from './components/TopFilterBar';
+import ShiftTable from './components/ShiftTable';
+import FAB from './components/FAB';
+import ThemeToggle from './components/ThemeToggle';
 
 const Home: React.FC = () => {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
